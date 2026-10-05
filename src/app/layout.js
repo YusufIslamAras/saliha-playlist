@@ -1,26 +1,27 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Manrope, Caveat } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+// Dört dilin harfleri için hem Latin hem Kiril alt kümeleri yüklenir
+const manrope = Manrope({
+  variable: "--font-manrope",
+  subsets: ["latin", "latin-ext", "cyrillic", "cyrillic-ext"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const caveat = Caveat({
+  variable: "--font-caveat",
+  subsets: ["latin", "latin-ext", "cyrillic", "cyrillic-ext"],
 });
 
 export const metadata = {
-  title: "Seda'nın Şarkısı",
-  description: "Seda'ya özel şarkı çalar uygulaması",
+  title: "Saliha'nın Şarkısı",
+  description: "Saliha'ya özel şarkı çalar uygulaması",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="uz">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${manrope.variable} ${caveat.variable} antialiased`}
       >
         {children}
       </body>
